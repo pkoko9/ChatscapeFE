@@ -1,0 +1,69 @@
+@import 'reset';
+
+.layout {
+	font-family: sans-serif;
+	background-image: url(http://ocw.usu.edu/University_Extension/conversation-on-instructional-design/conversation.jpg)
+}
+
+.title {
+	font-size: 2em;
+	display: block;
+	padding-left: 45%;
+	margin-top: 0.7em;
+	color: #E80738;
+
+}
+
+.chatBox{
+	height: 25em;
+	width: 30em;
+	background-color: #CCF0EC;
+	position:absolute;
+    z-index:15;
+    top:25%;
+    left:50%;
+    margin:-100px 0 0 -150px;
+    border: solid #8AA4ED 5px;
+    text-align: center;
+}
+
+.chatBox p, .chatRooms p {
+	
+	// background-color: #89D948;
+	border-bottom: solid #8AA4ED 5px;
+}
+
+.chatRooms {
+	height: 25em;
+	width: 10em;
+	background-color: #F0CCD0;
+	position:absolute;
+    z-index:15;
+    top:25%;
+    left:38%;
+    margin:-100px 0 0 -150px;
+    border: solid #8AA4ED 5px;
+    text-align: center;
+}
+
+#user {
+	padding-top: 32%;
+	padding-left: 27%;
+	color: #E80738;
+}
+
+#userCreate, #message {
+	height: 2em;
+	width: 58.5em;
+	background-color: #CCF0EC;
+	border: solid #8AA4ED 2px;
+}
+
+
+#message {
+	height: 6em;
+}
+
+#userSubmit {
+	font-size: 1em;
+}
