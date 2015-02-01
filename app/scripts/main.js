@@ -3,8 +3,6 @@ $(document).ready(onReady);
 
 function onReady() {
 	$('#userSubmit').on('click', onSubmitButtonClick);
-	// $('#getMessages').on('click', getMessages);
-
 
 	function onSubmitButtonClick() {
 		
@@ -17,7 +15,9 @@ function onReady() {
 
 				message: $('#message').val(),
 
-				created_at: $('').val(),
+				// created_at: $('#timestamp').val(),
+
+				// id: $('').val(),
 			}
 		},
 			messageDisplay(message),
@@ -29,13 +29,10 @@ function onReady() {
 	function messageDisplay(messages){
 		console.log (messages);
 		for (var i=0; i<messages.length; i++){
-			$('.messagePost').prepend('<div>User: ' + messages[i].user +'</div><div>Message: '+ messages[i].message + '</div><div>Time: '+ messages[i].created_at + '</div>');
+			$('.messagePost').prepend('<br></br><div>User: ' + messages[i].user +'</div><div>Message: '+ messages[i].message + '</div><div>Time: '+ messages[i].created_at + '<br></br></div>');
 			}
 		}
 	function getMessages() {
-		// $('#getMessages').on('click', ongetMessagesButtonClick);
-
-		// function ongetMessagesButtonClick () {
 
 			$.get(
 			'https://chatscape.herokuapp.com/chats.json',
@@ -46,10 +43,8 @@ function onReady() {
 			},
 			'json'
 			);
-		// }
 
 	}
-	// setInterval(getMessages,1000000);
 }
 
 
