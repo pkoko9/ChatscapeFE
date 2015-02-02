@@ -1,5 +1,7 @@
 /* jshint devel:true */
-$(document).ready(onReady); 
+$(document).ready(onReady);
+
+var now = new Date(); 
 
 function onReady() {
 	$('#userSubmit').on('click', onSubmitButtonClick);
@@ -15,12 +17,10 @@ function onReady() {
 
 				message: $('#message').val(),
 
-				// created_at: $('#timestamp').val(),
-
-				// id: $('').val(),
 			}
-		},
+		},		
 			messageDisplay(message),
+			clearForm(),
 			getMessages(),
 			'json'
 			);
@@ -29,9 +29,9 @@ function onReady() {
 	function messageDisplay(messages){
 		console.log (messages);
 		for (var i=0; i<messages.length; i++){
-			$('.messagePost').prepend('<br></br><div>User: ' + messages[i].user +'</div><div>Message: '+ messages[i].message + '</div><div>Time: '+ messages[i].created_at + '<br></br></div>');
-			}
+			$('.messagePost').prepend('<br></br><div>User: ' + messages[i].user +'</div><div>Message: '+ messages[i].message + '</div><div>Time: '+ now + '<br></br></div>');
 		}
+	}
 	function getMessages() {
 
 			$.get(
@@ -43,8 +43,18 @@ function onReady() {
 			},
 			'json'
 			);
+	}
+
+	function clearForm(){
+
+		$('#userSubmit').on('click', onSubmitButtonClick);
+			$('#userSubmit').on('click', function(){
+			$("#userCreate").val('');
+			$("#message").val('');
+	});
 
 	}
+
 }
 
 
